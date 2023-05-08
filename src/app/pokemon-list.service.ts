@@ -2,15 +2,11 @@ import { Injectable } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
 import { Pokemon } from './models/Pokemon';
 import { Observable, map } from 'rxjs';
+import { PokemonsResponse } from './models/PokemonsResponse';
 
 const POKEMONS = gql`
   {
     pokemons {
-      count
-      next
-      previous
-      nextOffset
-      prevOffset
       status
       message
       results {
@@ -28,7 +24,7 @@ const POKEMONS = gql`
 @Injectable({
   providedIn: 'root',
 })
-export class PokemonsService {
+export class PokemonListService {
   constructor(private apollo: Apollo) {}
 
   getPokemons(): Observable<Pokemon[]> {
@@ -36,6 +32,6 @@ export class PokemonsService {
       .watchQuery<any>({
         query: POKEMONS,
       })
-      .valueChanges.pipe(map((result) => result.data.pokemons));
+      .valueChanges.pipe(map((result) => result.data.pokemons.results));
   }
 }

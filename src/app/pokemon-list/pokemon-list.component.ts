@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { PokemonsService } from '../pokemons.service';
+import { PokemonListService } from '../pokemon-list.service';
+import { Pokemon } from '../models/Pokemon';
 
 @Component({
   selector: 'pokemon-list',
@@ -7,6 +8,13 @@ import { PokemonsService } from '../pokemons.service';
   styleUrls: ['./pokemon-list.component.css'],
 })
 export class PokemonListComponent {
-  pokemonName = 'Pikachu';
-  constructor() {}
+  pokemons: Pokemon[] = [];
+
+  constructor(private pokemonListService: PokemonListService) {}
+
+  getPokemons(): void {
+    this.pokemonListService
+      .getPokemons()
+      .subscribe((pokemons) => (this.pokemons = pokemons));
+  }
 }

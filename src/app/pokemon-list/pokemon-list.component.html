@@ -1,2 +1,5 @@
 <h1>POKEDEX</h1>
-<p>{{ pokemonName }}</p>
+<button (click)="getPokemons()">Click me</button>
+<div *ngFor="let pokemon of pokemons; let i = index">
+  ({{ i }}) {{ pokemon.name }} <img [src]="pokemon.artwork" />
+</div>
