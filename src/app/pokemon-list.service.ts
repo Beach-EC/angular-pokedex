@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
 import { Pokemon } from './models/Pokemon';
 import { Observable, map } from 'rxjs';
-import { PokemonsResponse } from './models/PokemonsResponse';
 
 const POKEMONS = gql`
   {
