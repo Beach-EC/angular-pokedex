@@ -1,5 +1,11 @@
-<h1>POKEDEX</h1>
-<button (click)="getPokemons()">Click me</button>
-<div *ngFor="let pokemon of pokemons; let i = index">
-  ({{ i }}) {{ pokemon.name }} <img [src]="pokemon.artwork" />
+<div class="banner">
+  <img src="assets/img/3a93b3a770f738e70b9f89412489ef6d.png" />
+</div>
+<div class="container">
+  <div class="card" *ngFor="let pokemon of pokemons; let i = index">
+    <div class="item">
+      <div class="name">{{ pokemon.id }} - {{ pokemon.name | titlecase }}</div>
+      <img [src]="pokemon.artwork" />
+    </div>
+  </div>
 </div>
