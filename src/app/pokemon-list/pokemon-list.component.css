@@ -31,7 +31,7 @@
 
 .name {
   display: flex;
-  font-weight: bold;
   justify-content: center;
   font-size: large;
+  font-family: "Press Start 2P", cursive;
 }
