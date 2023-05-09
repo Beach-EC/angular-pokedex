@@ -3,9 +3,9 @@
 </div>
 <div class="container">
   <div class="card" *ngFor="let pokemon of pokemons; let i = index">
-    <div class="item">
-      <div class="name">{{ pokemon.id }} - {{ pokemon.name | titlecase }}</div>
-      <img [src]="pokemon.artwork" />
+    <img class="pokemon-image" [src]="pokemon.artwork" />
+    <div class="pokemon-name">
+      {{ pokemon.id }} - {{ pokemon.name | titlecase }}
     </div>
   </div>
 </div>

@@ -6,32 +6,34 @@
   padding: 3rem;
 }
 
-.clickMe {
-  margin-top: 2rem;
-}
-
 .container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   justify-items: center;
-  padding-bottom: 3rem;
+  padding: 1rem;
 }
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  border-radius: 5px;
-  width: min-content;
-}
-
-.item {
+  border-radius: 1rem;
+  background-color: #dddddd;
+  display: flex;
+  flex-direction: column;
   padding: 2rem;
+  justify-content: center;
+  align-items: center;
 }
 
-.name {
+.pokemon-image {
+  max-width: 50%;
+}
+
+.pokemon-name {
   display: flex;
   justify-content: center;
   font-size: large;
   font-family: "Press Start 2P", cursive;
+  margin: 1rem;
 }

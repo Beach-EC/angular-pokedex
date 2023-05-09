@@ -5,7 +5,7 @@ import { Observable, map } from 'rxjs';
 
 const POKEMONS = gql`
   {
-    pokemons {
+    pokemons(offset: 0, limit: 151) {
       status
       message
       results {
@@ -31,6 +31,11 @@ export class PokemonListService {
       .watchQuery<any>({
         query: POKEMONS,
       })
-      .valueChanges.pipe(map((result) => result.data.pokemons.results));
+      .valueChanges.pipe(
+        map((result) => {
+          console.log(result.data.pokemons.results);
+          return result.data.pokemons.results;
+        })
+      );
   }
 }
