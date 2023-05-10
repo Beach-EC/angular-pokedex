@@ -1,1 +1,18 @@
-<p>pokemon-details works!</p>
+<div>
+  <pre>{{ pokemonDetails.name | titlecase }}</pre>
+  <img [src]="pokemonDetails.sprites.front_default" />
+  <div *ngFor="let type of pokemonDetails.types; let i = index">
+    <h4>Type</h4>
+    <pre>{{ type.type.name }}</pre>
+  </div>
+  <h4>Abilities</h4>
+  <div *ngFor="let ability of pokemonDetails.abilities; let i = index">
+    <pre>{{ ability.ability.name }}</pre>
+  </div>
+  <h4>Base Experience</h4>
+  <pre>{{ pokemonDetails.base_experience }}</pre>
+  <h4>Weight</h4>
+  <pre>{{ pokemonDetails.weight }}</pre>
+  <h4>Height</h4>
+  <pre>{{ pokemonDetails.height }}</pre>
+</div>

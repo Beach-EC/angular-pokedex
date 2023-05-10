@@ -11,8 +11,8 @@ const POKEMON_DETAILS = gql`
       sprites {
         front_default
       }
-      moves {
-        move {
+      abilities {
+        ability {
           name
         }
       }
@@ -21,6 +21,9 @@ const POKEMON_DETAILS = gql`
           name
         }
       }
+      base_experience
+      weight
+      height
     }
   }
 `;

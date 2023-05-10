@@ -8,7 +8,9 @@ import { PokemonDetails } from '../models/PokemonDetails';
   styleUrls: ['./pokemon-details.component.css'],
 })
 export class PokemonDetailsComponent implements OnInit {
-  pokemonDetails: PokemonDetails = {};
+  pokemonDetails: PokemonDetails = {
+    sprites: { front_default: '' },
+  };
 
   constructor(private pokemonDetailsService: PokemonDetailsService) {}
 

@@ -1,19 +1,26 @@
 export interface PokemonDetails {
   id?: number;
   name?: string;
-  sprites?: Sprites;
-  moves?: Move[];
+  sprites: Sprites;
+  abilities?: Ability[];
   types?: Type[];
+  base_experience?: string;
+  weight?: string;
+  height?: string;
 }
 
 interface Sprites {
   front_default: string;
 }
 
-interface Move {
-  name: string;
+interface Ability {
+  ability: {
+    name: string;
+  };
 }
 
 interface Type {
-  name: string;
+  type: {
+    name: string;
+  };
 }
