@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
-import { Pokemon } from './models/Pokemon';
+import { Pokemon } from '../models/Pokemon';
 import { Observable, map } from 'rxjs';
 
 const POKEMONS = gql`
