@@ -4,8 +4,8 @@ import { Pokemon } from '../models/Pokemon';
 import { Observable, map } from 'rxjs';
 
 const POKEMONS = gql`
-  {
-    pokemons(offset: 0, limit: 151) {
+  query pokemons($offset: Int, $limit: Int) {
+    pokemons(offset: $offset, limit: $limit) {
       status
       message
       results {
@@ -30,6 +30,10 @@ export class PokemonListService {
     return this.apollo
       .watchQuery<any>({
         query: POKEMONS,
+        variables: {
+          offset: 0,
+          limit: 151,
+        },
       })
       .valueChanges.pipe(map((result) => result.data.pokemons.results));
   }

@@ -1,17 +1,19 @@
-export interface PokemonDetails {}
+export interface PokemonDetails {
+  id?: number;
+  name?: string;
+  sprites?: Sprites;
+  moves?: Move[];
+  types?: Type[];
+}
 
-// id
-//     name
-//     sprites {
-//       front_default
-//     }
-//     moves {
-//       move {
-//         name
-//       }
-//     }
-//     types {
-//       type {
-//         name
-//       }
-//     }
+interface Sprites {
+  front_default: string;
+}
+
+interface Move {
+  name: string;
+}
+
+interface Type {
+  name: string;
+}
