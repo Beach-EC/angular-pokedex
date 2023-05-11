@@ -1,18 +1,36 @@
 <div>
-  <pre>{{ pokemonDetails.name | titlecase }}</pre>
-  <img [src]="pokemonDetails.sprites.front_default" />
-  <div *ngFor="let type of pokemonDetails.types; let i = index">
-    <h4>Type</h4>
-    <pre>{{ type.type.name }}</pre>
+  <div class="details-grid">
+    <h1 class="pokemon-name">{{ pokemonDetails.name | titlecase }}</h1>
+    <img class="pokemon-image" [src]="pokemonDetails.sprites.front_default" />
+    <div class="single-item">
+      <div>
+        <span class="label">Base Experience: </span>
+        <span>{{ pokemonDetails.base_experience }}</span>
+      </div>
+      <div>
+        <span class="label">Weight: </span>
+        <span>{{ pokemonDetails.weight }}</span>
+      </div>
+      <div>
+        <span class="label">Height: </span>
+        <span>{{ pokemonDetails.height }}</span>
+      </div>
+    </div>
+    <div class="type-item">
+      <p class="title">Type</p>
+      <div class="text">
+        <p *ngFor="let type of pokemonDetails.types; let i = index">
+          {{ type.type.name | titlecase }}
+        </p>
+      </div>
+    </div>
+    <div class="ability-item">
+      <p class="title">Abilities</p>
+      <div class="text">
+        <p *ngFor="let ability of pokemonDetails.abilities; let i = index">
+          {{ ability.ability.name | titlecase }}
+        </p>
+      </div>
+    </div>
   </div>
-  <h4>Abilities</h4>
-  <div *ngFor="let ability of pokemonDetails.abilities; let i = index">
-    <pre>{{ ability.ability.name }}</pre>
-  </div>
-  <h4>Base Experience</h4>
-  <pre>{{ pokemonDetails.base_experience }}</pre>
-  <h4>Weight</h4>
-  <pre>{{ pokemonDetails.weight }}</pre>
-  <h4>Height</h4>
-  <pre>{{ pokemonDetails.height }}</pre>
 </div>

@@ -1,0 +1,43 @@
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  justify-items: center;
+  padding: 1rem;
+}
+
+.pokemon-name {
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+.pokemon-image {
+  grid-column-start: 2;
+}
+
+.single-item {
+  grid-column-start: 3;
+}
+
+.type-item {
+  grid-column-start: 2;
+}
+
+.title {
+  font-weight: bold;
+  font-size: larger;
+}
+
+.ability-item {
+  grid-column-start: 3;
+}
+
+.label {
+  font-weight: bold;
+  font-size: larger;
+}
+
+.text {
+  font-weight: lighter;
+  font-size: larger;
+}
