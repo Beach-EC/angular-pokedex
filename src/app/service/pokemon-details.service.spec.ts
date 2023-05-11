@@ -37,7 +37,34 @@ describe('PokemonDetailsService', () => {
     op.flush({
       data: {
         pokemon: {
+          id: 132,
           name: 'ditto',
+          sprites: {
+            front_default:
+              'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png',
+          },
+          abilities: [
+            {
+              ability: {
+                name: 'limber',
+              },
+            },
+            {
+              ability: {
+                name: 'imposter',
+              },
+            },
+          ],
+          types: [
+            {
+              type: {
+                name: 'normal',
+              },
+            },
+          ],
+          base_experience: 101,
+          weight: 40,
+          height: 3,
         },
       },
     });

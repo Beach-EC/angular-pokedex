@@ -23,7 +23,7 @@ describe('PokemonListService', () => {
 
   it('should return list of pokemons', () => {
     service.getPokemons().subscribe((pokemons) => {
-      expect(pokemons[0].name).toEqual('bulbasur');
+      expect(pokemons[0].name).toEqual('bulbasaur');
     });
 
     const op = controller.expectOne(POKEMONS);
@@ -34,9 +34,17 @@ describe('PokemonListService', () => {
     op.flush({
       data: {
         pokemons: {
+          status: true,
+          message: '',
           results: [
             {
-              name: 'bulbasur',
+              url: 'https://pokeapi.co/api/v2/pokemon/1/',
+              name: 'bulbasaur',
+              image:
+                'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
+              artwork:
+                'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+              id: 1,
             },
           ],
         },

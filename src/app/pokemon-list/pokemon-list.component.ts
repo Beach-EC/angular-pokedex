@@ -10,12 +10,9 @@ import { Pokemon } from '../models/Pokemon';
 export class PokemonListComponent implements OnInit {
   pokemons: Pokemon[] = [];
 
-  constructor(private pokemonListService: PokemonListService) {
-    console.log('constructor', pokemonListService);
-  }
+  constructor(private pokemonListService: PokemonListService) {}
 
   ngOnInit(): void {
-    console.log('oninit', this.pokemonListService);
     this.pokemonListService
       .getPokemons()
       .subscribe((pokemons) => (this.pokemons = pokemons));
