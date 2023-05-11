@@ -14,7 +14,6 @@ export const POKEMONS = gql`
         image
         artwork
         id
-        dreamworld
       }
     }
   }

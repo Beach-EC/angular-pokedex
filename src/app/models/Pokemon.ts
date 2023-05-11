@@ -4,5 +4,4 @@ export interface Pokemon {
   image: string;
   artwork: string;
   id: number;
-  dreamworld: string;
 }

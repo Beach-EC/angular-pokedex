@@ -17,8 +17,6 @@ describe('PokemonListComponent', () => {
       artwork:
         'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
       id: 1,
-      dreamworld:
-        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg',
     },
   ];
 
