@@ -3,7 +3,7 @@ import { Apollo, gql } from 'apollo-angular';
 import { Pokemon } from '../models/Pokemon';
 import { Observable, map } from 'rxjs';
 
-const POKEMONS = gql`
+export const POKEMONS = gql`
   query pokemons($offset: Int, $limit: Int) {
     pokemons(offset: $offset, limit: $limit) {
       status

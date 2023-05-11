@@ -3,7 +3,7 @@ import { Apollo, gql } from 'apollo-angular';
 import { Observable, map } from 'rxjs';
 import { PokemonDetails } from '../models/PokemonDetails';
 
-const POKEMON_DETAILS = gql`
+export const POKEMON_DETAILS = gql`
   query pokemon($name: String!) {
     pokemon(name: $name) {
       id
