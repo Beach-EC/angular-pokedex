@@ -1,33 +1,48 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import {
-  ApolloTestingController,
-  ApolloTestingModule,
-} from 'apollo-angular/testing';
 import { PokemonListComponent } from './pokemon-list.component';
+import { PokemonListService } from '../service/pokemon-list.service';
+import { of } from 'rxjs';
+import { Pokemon } from '../models/Pokemon';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('PokemonListComponent', () => {
-  let controller: ApolloTestingController;
   let component: PokemonListComponent;
   let fixture: ComponentFixture<PokemonListComponent>;
+  const pokemons: Pokemon[] = [
+    {
+      url: 'https://pokeapi.co/api/v2/pokemon/1/',
+      name: 'bulbasaur',
+      image:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
+      artwork:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+      id: 1,
+      dreamworld:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg',
+    },
+  ];
+
+  const serviceMock = jasmine.createSpyObj<PokemonListService>(
+    'PokemonListService',
+    {
+      getPokemons: of(pokemons),
+    }
+  );
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [PokemonListComponent],
-      imports: [ApolloTestingModule],
+      providers: [{ provide: PokemonListService, useValue: serviceMock }],
+      schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
-
-    controller = TestBed.inject(ApolloTestingController);
 
     fixture = TestBed.createComponent(PokemonListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  afterEach(() => {
-    controller.verify();
-  });
-
   it('should create', () => {
+    expect(serviceMock.getPokemons).toHaveBeenCalled();
     expect(component).toBeTruthy();
   });
 });
