@@ -4,9 +4,9 @@ export interface PokemonDetails {
   sprites: Sprites;
   abilities?: Ability[];
   types?: Type[];
-  base_experience?: string;
-  weight?: string;
-  height?: string;
+  base_experience?: number;
+  weight?: number;
+  height?: number;
 }
 
 interface Sprites {
