@@ -3,7 +3,7 @@ import { PokemonListComponent } from './pokemon-list.component';
 import { PokemonListService } from '../service/pokemon-list.service';
 import { of } from 'rxjs';
 import { Pokemon } from '../models/Pokemon';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('PokemonListComponent', () => {
   let component: PokemonListComponent;
@@ -31,7 +31,7 @@ describe('PokemonListComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [PokemonListComponent],
       providers: [{ provide: PokemonListService, useValue: serviceMock }],
-      schemas: [NO_ERRORS_SCHEMA],
+      imports: [RouterTestingModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(PokemonListComponent);
